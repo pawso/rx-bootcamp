@@ -1,23 +1,12 @@
 package com.chrosciu.bootcamp.github;
 
 import com.jakewharton.retrofit2.adapter.reactor.ReactorCallAdapterFactory;
-import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
-import org.reactivestreams.Publisher;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
-import reactor.core.scheduler.Schedulers;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
-
-import java.io.IOException;
-import java.util.List;
-import java.util.function.Function;
 
 @Slf4j
 public class GithubClient {
@@ -44,7 +33,10 @@ public class GithubClient {
     }
 
     public Flux<String> getAllUserBranches(String username) {
-        return null;
+        return getUserRepositories(username)
+                .flatMap(repository -> getUserRepositoryBranches(username, repository.getName()))
+                .map(Branch::getName)
+                .distinct();
     }
 
     public void dispose() {
