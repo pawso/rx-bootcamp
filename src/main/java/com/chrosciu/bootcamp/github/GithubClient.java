@@ -21,8 +21,6 @@ import java.util.function.Function;
 
 @Slf4j
 public class GithubClient {
-    private final String githubToken = "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";
-
     private final OkHttpClient client = new OkHttpClient.Builder()
             .addNetworkInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BASIC))
             .addInterceptor(new GithubAuthInterceptor(GithubToken.TOKEN))
