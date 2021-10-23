@@ -1,11 +1,12 @@
 package com.chrosciu.bootcamp.github;
 
-import java.util.List;
-
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
+
+import java.util.List;
 
 
 public interface GithubApi {
@@ -15,4 +16,6 @@ public interface GithubApi {
     @GET("repos/{username}/{repo}/branches")
     Mono<List<Branch>> getUserRepositoryBranches(@Path("username") String username, @Path("repo") String repo);
 
+    @GET("/search/repositories")
+    Flux<QueryResult> getRepositories(@Query("q") String query);
 }
