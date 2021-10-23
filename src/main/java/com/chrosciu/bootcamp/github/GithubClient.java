@@ -5,11 +5,16 @@ import lombok.extern.slf4j.Slf4j;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import reactor.core.publisher.Flux;
+import reactor.core.scheduler.Schedulers;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
+import java.util.concurrent.CountDownLatch;
+
 @Slf4j
 public class GithubClient {
+    private static CountDownLatch latch = new CountDownLatch(1);
+
     private final OkHttpClient client = new OkHttpClient.Builder()
             .addNetworkInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BASIC))
             .addInterceptor(new GithubAuthInterceptor(GithubToken.TOKEN))
@@ -33,10 +38,11 @@ public class GithubClient {
     }
 
     public Flux<String> getAllUserBranches(String username) {
-        return getUserRepositories(username)
-                .flatMap(repository -> getUserRepositoryBranches(username, repository.getName()))
+        return getUserRepositories(username).take(5)
+                .flatMap(repository -> getUserRepositoryBranches(username, repository.getName()).subscribeOn(Schedulers.elastic()))
                 .map(Branch::getName)
-                .distinct();
+                .doFinally(s -> latch.countDown());
+                //.distinct();
     }
 
     public void dispose() {
@@ -55,7 +61,7 @@ public class GithubClient {
         Flux<String> branches = githubClient.getAllUserBranches("chrosciu");
         branches.subscribe(b -> log.info("{}", b));
 
-        Thread.sleep(5000);
+        latch.await();
 
         githubClient.dispose();
     }
