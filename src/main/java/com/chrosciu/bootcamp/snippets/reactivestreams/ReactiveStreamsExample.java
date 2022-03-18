@@ -5,11 +5,8 @@ import org.reactivestreams.Publisher;
 
 @Slf4j
 public class ReactiveStreamsExample {
-    public static void main(String[] args) {
-        new ReactiveStreamsExample().run();
-    }
 
-    private void run() {
+    public static void main(String[] args) {
         Publisher<Long> publisher = new MyPublisher(100);
         MySubscriber subscriber = new MySubscriber();
         log.info("subscribe()");
