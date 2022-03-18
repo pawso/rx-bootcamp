@@ -1,5 +1,8 @@
 package com.chrosciu.bootcamp.tasks.github;
 
+import com.chrosciu.bootcamp.tasks.github.dto.Branch;
+import com.chrosciu.bootcamp.tasks.github.dto.QueryResult;
+import com.chrosciu.bootcamp.tasks.github.dto.Repository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import retrofit2.http.GET;

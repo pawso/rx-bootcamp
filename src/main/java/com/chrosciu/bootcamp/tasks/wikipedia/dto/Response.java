@@ -1,4 +1,4 @@
-package com.chrosciu.bootcamp.tasks.wikipedia;
+package com.chrosciu.bootcamp.tasks.wikipedia.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;

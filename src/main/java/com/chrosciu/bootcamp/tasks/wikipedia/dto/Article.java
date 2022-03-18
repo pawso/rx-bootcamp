@@ -1,10 +1,11 @@
-package com.chrosciu.bootcamp.tasks.github;
+package com.chrosciu.bootcamp.tasks.wikipedia.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data
-public class Branch {
-    private String name;
+public class Article {
+    private String title;
+
 }

@@ -1,5 +1,6 @@
 package com.chrosciu.bootcamp.tasks.wikipedia;
 
+import com.chrosciu.bootcamp.tasks.wikipedia.dto.Response;
 import reactor.core.publisher.Mono;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
