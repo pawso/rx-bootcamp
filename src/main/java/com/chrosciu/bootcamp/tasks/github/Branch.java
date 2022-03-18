@@ -1,4 +1,4 @@
-package com.chrosciu.bootcamp.github;
+package com.chrosciu.bootcamp.tasks.github;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;

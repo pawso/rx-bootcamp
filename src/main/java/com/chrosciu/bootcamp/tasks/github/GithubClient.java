@@ -1,4 +1,4 @@
-package com.chrosciu.bootcamp.github;
+package com.chrosciu.bootcamp.tasks.github;
 
 import com.jakewharton.retrofit2.adapter.reactor.ReactorCallAdapterFactory;
 import lombok.extern.slf4j.Slf4j;

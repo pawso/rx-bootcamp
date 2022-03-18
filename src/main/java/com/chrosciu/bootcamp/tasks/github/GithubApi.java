@@ -1,4 +1,4 @@
-package com.chrosciu.bootcamp.github;
+package com.chrosciu.bootcamp.tasks.github;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

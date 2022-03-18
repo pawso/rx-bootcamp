@@ -1,4 +1,4 @@
-package com.chrosciu.bootcamp.wikipedia;
+package com.chrosciu.bootcamp.tasks.wikipedia;
 
 import reactor.core.publisher.Mono;
 import retrofit2.http.GET;

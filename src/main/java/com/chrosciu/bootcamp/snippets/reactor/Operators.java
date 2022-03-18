@@ -1,4 +1,4 @@
-package com.chrosciu.bootcamp.snippets;
+package com.chrosciu.bootcamp.snippets.reactor;
 
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;

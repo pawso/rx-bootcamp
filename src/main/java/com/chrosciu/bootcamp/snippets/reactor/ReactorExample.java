@@ -1,31 +1,11 @@
-package com.chrosciu.bootcamp.snippets;
+package com.chrosciu.bootcamp.snippets.reactor;
 
 import lombok.extern.slf4j.Slf4j;
-import org.reactivestreams.Subscription;
-import reactor.core.publisher.BaseSubscriber;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Slf4j
-class MySubscriber2 extends BaseSubscriber<String> {
-    @Override
-    public void hookOnSubscribe(Subscription s) {
-        s.request(1);
-    }
-
-    @Override
-    public void hookOnNext(String s) {
-        log.info("Element received: {}", s);
-        if ("B".equals(s)) {
-            cancel();
-        } else {
-            request(1);
-        }
-    }
-}
-
-@Slf4j
-public class ReactorExamples {
+public class ReactorExample {
 
     public static void main(String[] args) {
         //Flux<String> flux = Flux.just("A", "B", "C");

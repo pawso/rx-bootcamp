@@ -1,6 +1,6 @@
-package com.chrosciu.bootcamp;
+package com.chrosciu.bootcamp.tasks;
 
-import com.chrosciu.bootcamp.input.InputUtils;
+import com.chrosciu.bootcamp.tasks.input.InputUtils;
 import reactor.core.publisher.Flux;
 
 public class Application {

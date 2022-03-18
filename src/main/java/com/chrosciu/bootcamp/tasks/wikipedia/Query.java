@@ -1,11 +1,12 @@
-package com.chrosciu.bootcamp.wikipedia;
+package com.chrosciu.bootcamp.tasks.wikipedia;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
+import java.util.List;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data
-public class Article {
-    private String title;
-
+public class Query {
+    private List<Article> search;
 }

@@ -1,4 +1,4 @@
-package com.chrosciu.bootcamp.snippets;
+package com.chrosciu.bootcamp.snippets.reactivestreams;
 
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;

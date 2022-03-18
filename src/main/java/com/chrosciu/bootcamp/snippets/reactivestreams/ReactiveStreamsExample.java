@@ -1,12 +1,12 @@
-package com.chrosciu.bootcamp.snippets;
+package com.chrosciu.bootcamp.snippets.reactivestreams;
 
 import lombok.extern.slf4j.Slf4j;
 import org.reactivestreams.Publisher;
 
 @Slf4j
-public class SubscriptionExample {
+public class ReactiveStreamsExample {
     public static void main(String[] args) {
-        new SubscriptionExample().run();
+        new ReactiveStreamsExample().run();
     }
 
     private void run() {

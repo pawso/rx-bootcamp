@@ -1,4 +1,4 @@
-package com.chrosciu.bootcamp.input;
+package com.chrosciu.bootcamp.tasks.input;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

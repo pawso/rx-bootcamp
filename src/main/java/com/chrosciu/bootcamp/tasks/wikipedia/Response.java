@@ -1,11 +1,10 @@
-package com.chrosciu.bootcamp.github;
+package com.chrosciu.bootcamp.tasks.wikipedia;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data
-public class Repository {
-    private String name;
-    private String description;
+public class Response {
+    private Query query;
 }
