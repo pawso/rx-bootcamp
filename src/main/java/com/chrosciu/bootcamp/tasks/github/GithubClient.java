@@ -15,14 +15,15 @@ public class GithubClient {
         return null;
     }
 
-    public Flux<Repository> getUsersRepositories(Publisher<String> usernames) {
+    public Flux<Branch> getUserRepositoryBranches(String username, String repo) {
         //TODO: Implement
         return null;
     }
 
-    public Flux<Branch> getUserRepositoryBranches(String username, String repo) {
+    public Flux<Repository> getUsersRepositories(Publisher<String> usernames) {
         //TODO: Implement
-        return null;    }
+        return null;
+    }
 
     public Flux<String> getAllUserBranchesNames(String username) {
         //TODO: Implement
