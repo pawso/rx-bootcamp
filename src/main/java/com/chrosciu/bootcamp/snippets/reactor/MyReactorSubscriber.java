@@ -14,10 +14,15 @@ class MyReactorSubscriber extends BaseSubscriber<String> {
     @Override
     public void hookOnNext(String s) {
         log.info("Element received: {}", s);
-        if ("B".equals(s)) {
+        if ("X".equals(s)) {
             cancel();
         } else {
             request(1);
         }
+    }
+
+    @Override
+    public void hookOnComplete() {
+        log.info("Completed");
     }
 }
