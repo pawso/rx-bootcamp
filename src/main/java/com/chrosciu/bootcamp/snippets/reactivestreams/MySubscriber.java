@@ -6,7 +6,7 @@ import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 
 @Slf4j
-class MySubscriber implements Subscriber<Long> {
+public class MySubscriber implements Subscriber<Long> {
 
     private Subscription subscription;
 
@@ -25,7 +25,7 @@ class MySubscriber implements Subscriber<Long> {
 
     @Override
     public void onSubscribe(@NonNull Subscription subscription) {
-        log.info("onSubscription: {}", subscription);
+        log.info("onSubscribe: {}", subscription);
         if (this.subscription != null) {
             subscription.cancel();
             return;
