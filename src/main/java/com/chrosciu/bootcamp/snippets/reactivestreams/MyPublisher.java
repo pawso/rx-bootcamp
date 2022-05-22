@@ -24,6 +24,7 @@ class MyPublisher implements Publisher<Long> {
 
         @Override
         public void request(long l) {
+            log.info("request: {}", l);
             if (MyPublisher.this.subscriber == null) {
                 return;
             }
@@ -50,12 +51,14 @@ class MyPublisher implements Publisher<Long> {
 
         @Override
         public void cancel() {
+            log.info("cancel");
             MyPublisher.this.subscriber = null;
         }
     }
 
     @Override
     public void subscribe(@NonNull Subscriber<? super Long> subscriber) {
+        log.info("subscribe: {}", subscriber);
         if (this.subscriber != null) {
             throw new IllegalStateException("Cannot subscribe more than once");
         }
